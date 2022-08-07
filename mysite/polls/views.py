@@ -5,9 +5,10 @@ from django.http import HttpResponse
 
 
 def index(request):
-    latest_question_list = Question.objects.order_by('-pub_date')[:5]
-    output = ', '.join([q.question_text for q in latest_question_list])
-    return HttpResponse(output)
+    quesions = Question.objects.order_by("pub_date")[:5]
+    #...order_by("-pub_date")[:5] # "-" would make it desc
+    context = {'latest_question_list':quesions}
+    return render(request, "polls/index.html", context)
 
 
 def detail(request, question_id):
