@@ -14,3 +14,10 @@ urlpatterns = [
     # ex: /polls/5/vote/
     path('<int:question_id>/vote/', views.vote, name='vote'),
 ]
+
+
+
+
+print(urlpatterns[0].name)
+print(f"name is: {urlpatterns[0].name}")
+

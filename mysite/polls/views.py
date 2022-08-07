@@ -3,6 +3,10 @@ from .models import Question
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse
 
+from pprint import pprint as pp
+
+
+
 
 def index(request):
     quesions = Question.objects.order_by("pub_date")[:5]
