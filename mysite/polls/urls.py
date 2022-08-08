@@ -30,6 +30,6 @@ urlpatterns = [
 
 
 
-print(urlpatterns[0].name)
-print(f"name is: {urlpatterns[0].name}")
+#print(urlpatterns[0].name)
+#print(f"name is: {urlpatterns[0].name}")
 

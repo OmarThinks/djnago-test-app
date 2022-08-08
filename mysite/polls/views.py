@@ -9,13 +9,15 @@ from django.views import generic
 from pprint import pprint as pp
 
 
+
 class IndexView(generic.ListView):
     #model = Question
     template_name = "polls/index.html"
-    context_object_name = 'latest_question_list'
+    #context_object_name = 'question_list'
     
     def get_queryset(self):
         """Return the last five published questions."""
+        #print(f"context_object_name: {self.context_object_name}")
         return Question.objects.order_by('-pub_date')[:5]
 
 class DetailView(generic.DetailView):
