@@ -3,19 +3,24 @@ from .models import Question, Choice
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
+from django.views import generic
+
+
 from pprint import pprint as pp
 
 
 
 
-def index(request):
+
+
+def index_old(request):
     questions = Question.objects.order_by("pub_date")[:5]
     #...order_by("-pub_date")[:5] # "-" would make it desc
     context = {'latest_question_list':questions}
     return render(request, "polls/index.html", context)
 
 
-def detail(request, question_id):
+def detail_old(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
     return render(request, 'polls/detail.html', {'question': question})
 
@@ -23,8 +28,8 @@ def detail(request, question_id):
 
 
 def results(request, question_id):
-    response = "You're looking at the results of question %s."
-    return HttpResponse(response % question_id)
+    question = get_object_or_404(Question, pk=question_id)
+    return render(request, 'polls/results.html', {'question': question})
 
 def vote(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
