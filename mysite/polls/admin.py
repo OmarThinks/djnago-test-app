@@ -1,7 +1,7 @@
 from django.contrib import admin
 # Register your models here.
 
-from .models import Question, Choice, Place, Restaurant
+from .models import Question, Choice, Blog, Author, Entry
 
 
 
@@ -26,6 +26,7 @@ class ChoiceAdmin(admin.ModelAdmin):
 
 admin.site.register(Question, QuestionAdmin)
 admin.site.register(Choice)
+admin.site.register(Blog)
+admin.site.register(Author)
+admin.site.register(Entry)
 
-admin.site.register(Place)
-admin.site.register(Restaurant)
