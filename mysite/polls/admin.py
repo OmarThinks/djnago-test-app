@@ -1,7 +1,7 @@
 from django.contrib import admin
 # Register your models here.
 
-from .models import Question, Choice, Blog, Author, Entry, Person, MyPerson
+from .models import Question, Choice, Blog, Author, Entry
 
 
 
@@ -29,6 +29,5 @@ admin.site.register(Choice)
 admin.site.register(Blog)
 admin.site.register(Author)
 admin.site.register(Entry)
-admin.site.register(Person)
-admin.site.register(MyPerson)
+
 

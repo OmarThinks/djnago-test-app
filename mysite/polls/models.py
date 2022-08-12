@@ -75,18 +75,3 @@ class Entry(models.Model):
 
 
 
-
-
-class Person(models.Model):
-    first_name = models.CharField(max_length=30)
-    last_name = models.CharField(max_length=30)
-    def __str__(self):
-        return f"{self.first_name} {self.last_name}"
-
-class MyPerson(Person):
-    class Meta:
-        proxy = True
-
-    def do_something(self):
-        # ...
-        pass
