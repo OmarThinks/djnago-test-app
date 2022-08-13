@@ -74,8 +74,15 @@ class Entry(models.Model):
 """
 python manage.py shell
 from polls.models import Blog, Entry
+
+# filter
 Blog.objects.filter(entry__headline__contains='Lennon', entry__pub_date__year=2008)
 Blog.objects.filter(entry__headline__contains='Lennon').filter(entry__pub_date__year=2008)
+
+# exclude
+
+Blog.objects.exclude(entry__headline__contains='Lennon',entry__pub_date__year=2008)
+Blog.objects.exclude(entry__in=Entry.objects.filter(headline__contains='Lennon',pub_date__year=2008,),)
 """
 
 

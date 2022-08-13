@@ -89,6 +89,15 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+    },
+    
+    "question":{
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'question.sqlite3',
+    },
+    "choice":{
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'choice.sqlite3',
     }
 }
 
