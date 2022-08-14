@@ -87,3 +87,26 @@ Blog.objects.exclude(entry__in=Entry.objects.filter(headline__contains='Lennon',
 
 
 
+
+
+
+
+
+
+
+
+
+
+class Customer(models.Model):
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+
+    class Meta:
+        indexes = [
+            models.Index(fields=['last_name', 'first_name']),
+            models.Index(fields=['first_name'], name='first_name_idx'),
+        ]
+
+
+
+

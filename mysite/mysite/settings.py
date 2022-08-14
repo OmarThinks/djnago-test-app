@@ -91,11 +91,11 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     },
     
-    "question":{
+    "questions":{
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'question.sqlite3',
     },
-    "choice":{
+    "choices":{
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'choice.sqlite3',
     }
