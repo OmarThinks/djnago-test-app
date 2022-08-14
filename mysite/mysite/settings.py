@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-^3$zg5=mi*6eteg7zaup3v5k_x3x_+j3ij&!d)scaomgj^$-^g'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -90,15 +90,6 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     },
-    
-    "questions":{
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'question.sqlite3',
-    },
-    "choices":{
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'choice.sqlite3',
-    }
 }
 
 

@@ -5,7 +5,7 @@ from django.shortcuts import get_object_or_404, render
 from django.views import generic
 from django.urls import reverse
 from django.utils import timezone
-
+from .models import Choice
 
 from pprint import pprint as pp
 
@@ -84,6 +84,25 @@ def vote(request, question_id):
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
         return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
+
+
+
+
+
+
+
+
+
+from django.views.generic.detail import DetailView
+
+
+class ChoiceDetailView(DetailView):
+    model = Choice
+
+
+
+
+
 
 
 
