@@ -1,6 +1,10 @@
 from django.urls import path
 
 from . import views
+from . import error_handlers
+from django.conf.urls import (
+handler400, handler403, handler404, handler500
+)
 
 app_name = 'polls'
 
@@ -27,6 +31,9 @@ urlpatterns = [
 
 ]
 
+
+
+handler404 = error_handlers.my_custom_not_found
 
 
 
