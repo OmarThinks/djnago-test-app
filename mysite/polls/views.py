@@ -108,3 +108,51 @@ class ChoiceDetailView(DetailView):
 
 
 
+
+
+
+
+
+
+
+
+from django.http import HttpResponseRedirect
+from django.shortcuts import render
+
+from .forms import NameForm
+
+def get_name(request):
+    # if this is a POST request we need to process the form data
+    if request.method == 'POST':
+        # create a form instance and populate it with data from the request:
+        form = NameForm(request.POST)
+        # check whether it's valid:
+        if form.is_valid():
+            # process the data in form.cleaned_data as required
+            # ...
+            # redirect to a new URL:
+            #return HttpResponseRedirect('/polls/your-name/')
+            your_name_url = reverse("polls:your-name")
+            return HttpResponseRedirect(your_name_url)
+
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        form = NameForm()
+    
+    return render(request, 'name.html', {'form': form})
+
+
+def your_name(request):
+    if request.method == 'POST':
+        print(request.POST["your_name"], type(request.POST["your_name"]))
+        if request.POST["your_name"]!= None:
+            the_name = request.POST["your_name"]
+            return render(request, "your-name.html", {"your_name": the_name})
+    
+    name_url = reverse("polls:name")
+
+    return HttpResponseRedirect(name_url)
+    
+
+
+

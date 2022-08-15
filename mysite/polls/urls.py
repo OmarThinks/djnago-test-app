@@ -22,6 +22,8 @@ urlpatterns = [
     
     
     path('article/<int:pk>/', views.ChoiceDetailView.as_view()),
+    path('name/', views.get_name, name = "name"),
+    path('your-name/', views.your_name, name = "your-name"),
 
     # ex: /polls/old/
     path('old/', views.index_old, name='index_old'),

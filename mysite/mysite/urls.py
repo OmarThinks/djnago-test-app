@@ -19,7 +19,7 @@ from django.urls import include, path
 from polls import error_handlers
 
 urlpatterns = [
-    path('polls/', include('polls.urls')),
+    path('polls/', include('polls.urls', namespace="pollss"), name="polls"),
     path('admin/', admin.site.urls),
 ]
 
