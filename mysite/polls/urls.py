@@ -5,6 +5,7 @@ from . import error_handlers
 from django.conf.urls import (
 handler400, handler403, handler404, handler500
 )
+from . import forms
 
 app_name = 'polls'
 
@@ -19,6 +20,7 @@ urlpatterns = [
     path("<int:pk>/results/", views.ResultsView.as_view(), name="results"),
     # ex: /polls/5/vote/
     path('<int:question_id>/vote/', views.vote, name='vote'),
+    path('form/', forms.form_view, name='form'),
     
     
     path('article/<int:pk>/', views.ChoiceDetailView.as_view()),
