@@ -25,6 +25,8 @@ class ChoiceAdmin(admin.ModelAdmin):
     fields= ["question_text", "pub_date"]
 
 
+
+
 class BookInline(admin.TabularInline):
     model = Book
 
@@ -36,9 +38,11 @@ class AuthorAdmin(admin.ModelAdmin):
 admin.site.register(Question, QuestionAdmin)
 admin.site.register(Choice)
 admin.site.register(Blog)
-admin.site.register(Author)
 admin.site.register(Entry)
 admin.site.register(Customer)
 admin.site.register(MyModel)
 
 
+
+admin.site.register(Book)
+admin.site.register(Author, AuthorAdmin)
