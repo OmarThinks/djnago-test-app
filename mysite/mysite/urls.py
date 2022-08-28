@@ -21,6 +21,7 @@ from polls import error_handlers
 urlpatterns = [
     path('polls/', include('polls.urls', namespace="pollss"), name="polls"),
     path('admin/', admin.site.urls),
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
 
 
