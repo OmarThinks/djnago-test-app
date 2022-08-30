@@ -21,6 +21,7 @@ urlpatterns = [
     # ex: /polls/5/vote/
     path('<int:question_id>/vote/', views.vote, name='vote'),
     path('form/', forms.form_view, name='form'),
+    path('log/', views.test_logging, name='log'),
     
     
     path('article/<int:pk>/', views.ChoiceDetailView.as_view()),
@@ -34,7 +35,6 @@ urlpatterns = [
     # ex: /polls/old/5/results/
     path('old/<int:question_id>/results/', views.results, name='results_old'),
     
-
 ]
 
 

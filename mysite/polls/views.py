@@ -155,4 +155,11 @@ def your_name(request):
     
 
 
+import logging
 
+logger = logging.getLogger(__name__)
+
+
+def test_logging(request):
+    logger.warning('Test Log')
+    return HttpResponse("Logged")
